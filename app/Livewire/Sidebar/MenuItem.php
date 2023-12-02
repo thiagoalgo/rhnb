@@ -37,4 +37,9 @@ class MenuItem extends Component
         //dd($unique);
         $this->is_selected = $this->unique === $unique;
     }
+
+    public function logout()
+    {
+        dd('logout');
+    }
 }

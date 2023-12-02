@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Login extends Component
@@ -14,8 +15,19 @@ class Login extends Component
         return view('livewire.login')->layout('components.layouts.guest');
     }
 
-    public function login(): void
+    public function login()
     {
-        dd($this->email . ' ' . $this->password);
+        $credentials = [
+            'email' => $this->email,
+            'password' => $this->password,
+        ];
+
+        if (Auth::attempt($credentials)) {
+            // Autenticação bem-sucedida
+            return redirect()->route('home');
+        } else {
+            // Autenticação falhou
+            session()->flash('error', 'Credenciais inválidas');
+        }
     }
 }

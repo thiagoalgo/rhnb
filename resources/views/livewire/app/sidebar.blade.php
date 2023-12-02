@@ -3,7 +3,7 @@
         <button type="button" wire:click="download">
             Download Invoice
         </button>
-        <div class="sidebar-header flex items-center justify-center py-4">
+        <div class="sidebar-header flex items-center justify-center">
             <div class="inline-flex">
                 <a href="#" class="inline-flex flex-row items-center">
                     <img src="assets/img/logo-rh-nb.png" alt="Logo RH Nada Básico">
@@ -34,6 +34,7 @@
                 <livewire:sidebar.menu-item text="Cargos" icon="user-circle"></livewire:sidebar.menu-item>
                 <livewire:sidebar.menu-item text="Colaboradores" icon="user-group"></livewire:sidebar.menu-item>
                 <livewire:sidebar.menu-item text="Configurações" icon="cog-8-tooth"></livewire:sidebar.menu-item>
+
 
                 <!--
                 <li class="my-px">
