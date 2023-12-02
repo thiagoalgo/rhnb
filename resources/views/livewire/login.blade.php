@@ -35,26 +35,4 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-    <!--
-<div class="flex h-screen">
-    <div class="m-auto w-1/3">
-        <x-card class="py-20 px-20 space-y-12">
-            <h1 class="text-4xl font-bold text-center">
-                RHaaS
-            </h1>
-            <x-input label="E-mail" icon="user" position="right" wire:model="email" />
-            <x-password label="Password" wire:model="password" />
-            <div class="flex flex-col items-center">
-                <x-button text="Entrar" wire:click="login" />
-            </div>
-        </x-card>
-    </div>
-</div>
--->
 </div>
