@@ -13,7 +13,12 @@ export default {
     './vendor/tallstackui/tallstackui/src/**/*.php',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'logorhnb': '#281f4f'
+      },
+    },
+
   },
   plugins: [forms],
 }

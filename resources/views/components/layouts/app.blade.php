@@ -16,8 +16,24 @@
     <title>{{ $title ?? 'Page Title' }}</title>
 </head>
 
-<body>
-    {{ $slot }}
+<body class="bg-slate-100">
+    <div class="flex flex-row min-h-screen bg-gray-100 text-gray-800">
+
+        @livewire('app.sidebar')
+
+        <main class="main flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in">
+
+            @livewire('app.header')
+
+            <div class="main-content flex flex-col flex-grow p-4">
+                {{ $slot }}
+            </div>
+
+            @livewire('app.footer')
+
+        </main>
+    </div>
+
 </body>
 
 </html>
