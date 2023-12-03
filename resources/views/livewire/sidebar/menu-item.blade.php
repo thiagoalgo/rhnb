@@ -3,9 +3,13 @@
         <span class="flex font-medium text-sm text-gray-300 px-4 my-4 uppercase">{{ $text }}</span>
     @else
         @if ($is_selected)
-            <a href="#" class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-700 bg-gray-100">
-                <span class="flex items-center justify-center text-lg text-gray-400">
-                    <x-icon name="{{ $icon }}" class="h-6 w-6" outline="true" />
+            <a href="#"
+                class="flex flex-row items-center h-10
+                px-3 rounded-lg text-gray-700 bg-gray-100"
+                wire:click.prevent="onClick('{{ $unique }}')>
+                <span class="flex items-center
+                justify-center text-lg text-gray-400">
+                <x-icon name="{{ $icon }}" class="h-6 w-6" outline="true" />
                 </span>
                 <span class="ml-3">{{ $text }}</span>
 

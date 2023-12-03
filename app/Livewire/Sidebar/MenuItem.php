@@ -32,7 +32,7 @@ class MenuItem extends Component
         $this->dispatch('menu-item-clicked', unique: $unique);
 
         if ($this->route) {
-            redirect()->route($this->route);
+            $this->redirectRoute($this->route, navigate: true);
         }
     }
 
