@@ -6,16 +6,16 @@
             <a href="#"
                 class="flex flex-row items-center h-10
                 px-3 rounded-lg text-gray-700 bg-gray-100"
-                wire:click.prevent="onClick('{{ $unique }}')>
-                <span class="flex items-center
-                justify-center text-lg text-gray-400">
-                <x-icon name="{{ $icon }}" class="h-6 w-6" outline="true" />
+                wire:click.prevent="onClick">
+                <span class="flex items-center justify-center text-lg
+                text-gray-400">
+                    <x-icon name="{{ $icon }}" class="h-6 w-6" outline="true" />
                 </span>
                 <span class="ml-3">{{ $text }}</span>
 
             </a>
         @else
-            <a href="#" wire:click.prevent="onClick('{{ $unique }}')"
+            <a href="#" wire:click.prevent="onClick"
                 class="flex flex-row items-center h-10 px-3 rounded-lg text-gray-300 hover:bg-gray-100 hover:text-gray-700">
                 <span class="flex items-center justify-center text-lg text-gray-400">
                     <x-icon name="{{ $icon }}" class="h-6 w-6" outline="true" />

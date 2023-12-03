@@ -19,7 +19,7 @@
                 <livewire:sidebar.menu-item text="Registro de Ponto" icon="clock"
                     route="time-record"></livewire:sidebar.menu-item>
                 <livewire:sidebar.menu-item text="Avaliação de Desempenho" icon="clipboard-document-check"
-                    route="home"></livewire:sidebar.menu-item>
+                    route="performance-review"></livewire:sidebar.menu-item>
                 <livewire:sidebar.menu-item text="Academy" icon="academic-cap"></livewire:sidebar.menu-item>
                 <livewire:sidebar.menu-item text="Comunicação Interna" icon="megaphone"></livewire:sidebar.menu-item>
                 <livewire:sidebar.menu-item text="Recrutamento e Seleção"
