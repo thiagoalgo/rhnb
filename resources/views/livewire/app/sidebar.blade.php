@@ -13,11 +13,12 @@
         <div class="sidebar-content px-4 py-6">
             <ul class="flex flex-col w-full">
 
-                <livewire:sidebar.menu-item text="Home" icon="home"
+                <livewire:sidebar.menu-item text="Home" icon="home" route="home"
                     is_selected="true"></livewire:sidebar.menu-item>
 
                 <livewire:sidebar.menu-item text="Colaboradores" is_title="true"></livewire:sidebar.menu-item>
-                <livewire:sidebar.menu-item text="Registro de Ponto" icon="clock"></livewire:sidebar.menu-item>
+                <livewire:sidebar.menu-item text="Registro de Ponto" icon="clock"
+                    route="time-record"></livewire:sidebar.menu-item>
                 <livewire:sidebar.menu-item text="Avaliação de Desempenho"
                     icon="clipboard-document-check"></livewire:sidebar.menu-item>
                 <livewire:sidebar.menu-item text="Academy" icon="academic-cap"></livewire:sidebar.menu-item>

@@ -13,6 +13,7 @@ class MenuItem extends Component
     public ?string $icon = null;
     public bool $is_title = false;
     public bool $is_selected = false;
+    public string $route = '';
 
     public function mount(): void
     {
@@ -29,17 +30,15 @@ class MenuItem extends Component
     {
         $this->is_selected = $this->unique === $unique;
         $this->dispatch('menu-item-clicked', unique: $unique);
+
+        if ($this->route) {
+            redirect()->route($this->route);
+        }
     }
 
     #[On('menu-item-clicked')]
     public function menuItemClicked(string $unique)
     {
-        //dd($unique);
         $this->is_selected = $this->unique === $unique;
-    }
-
-    public function logout()
-    {
-        dd('logout');
     }
 }
