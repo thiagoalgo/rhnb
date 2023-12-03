@@ -2,16 +2,11 @@
 
 namespace App\Livewire;
 
-use Livewire\Component;
+use App\Livewire\BaseComponent;
 
-class Home extends Component
+class Home extends BaseComponent
 {
-    protected string $route = 'home';
-
-    public function mount()
-    {
-        $this->dispatch('route-accessed', $this->route);
-    }
+    public string $route = 'home';
 
     public function render()
     {

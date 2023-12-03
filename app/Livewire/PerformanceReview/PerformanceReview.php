@@ -2,16 +2,11 @@
 
 namespace App\Livewire\PerformanceReview;
 
-use Livewire\Component;
+use App\Livewire\BaseComponent;
 
-class PerformanceReview extends Component
+class PerformanceReview extends BaseComponent
 {
     protected string $route = 'performance-review';
-
-    public function mount()
-    {
-        $this->dispatch('route-accessed', $this->route);
-    }
 
     public function render()
     {

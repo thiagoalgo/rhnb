@@ -2,16 +2,11 @@
 
 namespace App\Livewire\TimeRecord;
 
-use Livewire\Component;
+use App\Livewire\BaseComponent;
 
-class TimeRecord extends Component
+class TimeRecord extends BaseComponent
 {
-    protected string $route = 'time-record';
-
-    public function mount()
-    {
-        $this->dispatch('route-accessed', $this->route);
-    }
+    public string $route = 'time-record';
 
     public function render()
     {
