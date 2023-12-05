@@ -35,6 +35,9 @@
                 <livewire:sidebar.menu-item text="Colaboradores" icon="user-group"></livewire:sidebar.menu-item>
                 <livewire:sidebar.menu-item text="Configurações" icon="cog-8-tooth"></livewire:sidebar.menu-item>
 
+                <livewire:sidebar.menu-item text="Sair" icon="arrow-left-on-rectangle"
+                    route="logout"></livewire:sidebar.menu-item>
+
 
                 <!--
                 <li class="my-px">

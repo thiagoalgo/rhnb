@@ -30,4 +30,10 @@ class Login extends Component
             session()->flash('error', 'Credenciais inválidas');
         }
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
+    }
 }
