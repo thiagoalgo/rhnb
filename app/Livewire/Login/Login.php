@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Login;
 
+use App\Traits\LogoutTrait;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -9,6 +10,7 @@ use TallStackUi\Traits\Interactions;
 
 class Login extends Component
 {
+    use LogoutTrait;
     use Interactions;
 
     #[Validate('required|email', onUpdate: false)]
@@ -43,11 +45,5 @@ class Login extends Component
         } else {
             $this->toast()->error('Credenciais inválidas');
         }
-    }
-
-    public function logout()
-    {
-        Auth::logout();
-        return redirect()->route('login');
     }
 }

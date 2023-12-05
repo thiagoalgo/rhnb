@@ -2,19 +2,15 @@
 
 namespace App\Livewire\App;
 
-use Illuminate\Support\Facades\Auth;
+use App\Traits\LogoutTrait;
 use Livewire\Component;
 
 class Header extends Component
 {
+    use LogoutTrait;
+
     public function render()
     {
         return view('livewire.app.header');
-    }
-
-    public function logout()
-    {
-        Auth::logout();
-        return redirect()->route('login');
     }
 }
