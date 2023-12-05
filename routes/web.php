@@ -1,7 +1,7 @@
 <?php
 
-use App\Livewire\Home;
-use App\Livewire\Login;
+use App\Livewire\Home\Home;
+use App\Livewire\Login\Login as LoginLogin;
 use App\Livewire\PerformanceReview\PerformanceReview;
 use App\Livewire\TimeRecord\TimeRecord;
 use Illuminate\Support\Facades\Route;
@@ -10,7 +10,7 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
-Route::get('/login', Login::class)->name('login');
+Route::get('/login', LoginLogin::class)->name('login');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/home', Home::class)->name('home');
