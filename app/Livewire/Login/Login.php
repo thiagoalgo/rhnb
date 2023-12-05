@@ -3,12 +3,23 @@
 namespace App\Livewire\Login;
 
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class Login extends Component
 {
+    #[Validate('required|email', onUpdate: true)]
     public string $email = '';
+
+    #[Validate('required|min:6', onUpdate: false)]
     public string $password = '';
+
+    public function mount()
+    {
+        if (Auth::check()) {
+            return redirect()->route('home');
+        }
+    }
 
     public function render()
     {
@@ -17,6 +28,8 @@ class Login extends Component
 
     public function login()
     {
+        $this->validate();
+
         $credentials = [
             'email' => $this->email,
             'password' => $this->password,
