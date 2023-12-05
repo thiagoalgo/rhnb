@@ -5,10 +5,13 @@ namespace App\Livewire\Login;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use TallStackUi\Traits\Interactions;
 
 class Login extends Component
 {
-    #[Validate('required|email', onUpdate: true)]
+    use Interactions;
+
+    #[Validate('required|email', onUpdate: false)]
     public string $email = '';
 
     #[Validate('required|min:6', onUpdate: false)]
@@ -36,11 +39,9 @@ class Login extends Component
         ];
 
         if (Auth::attempt($credentials)) {
-            // Autenticação bem-sucedida
             return redirect()->route('home');
         } else {
-            // Autenticação falhou
-            session()->flash('error', 'Credenciais inválidas');
+            $this->toast()->error('Credenciais inválidas');
         }
     }
 

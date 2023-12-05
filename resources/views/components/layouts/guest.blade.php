@@ -17,6 +17,7 @@
 </head>
 
 <body class="bg-logorhnb">
+    <x-toast />
     {{ $slot }}
 </body>
 
