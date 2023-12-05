@@ -13,30 +13,33 @@
         <div class="sidebar-content px-4 py-6">
             <ul class="flex flex-col w-full">
 
-                <livewire:sidebar.menu-item text="Home" icon="home" route="home"></livewire:sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="Home" icon="home"
+                    route="home"></livewire:app.sidebar.menu-item>
 
-                <livewire:sidebar.menu-item text="Colaboradores" is_title="true"></livewire:sidebar.menu-item>
-                <livewire:sidebar.menu-item text="Registro de Ponto" icon="clock"
-                    route="time-record"></livewire:sidebar.menu-item>
-                <livewire:sidebar.menu-item text="Avaliação de Desempenho" icon="clipboard-document-check"
-                    route="performance-review"></livewire:sidebar.menu-item>
-                <livewire:sidebar.menu-item text="Academy" icon="academic-cap"></livewire:sidebar.menu-item>
-                <livewire:sidebar.menu-item text="Comunicação Interna" icon="megaphone"></livewire:sidebar.menu-item>
-                <livewire:sidebar.menu-item text="Recrutamento e Seleção"
-                    icon="face-smile"></livewire:sidebar.menu-item>
-                <livewire:sidebar.menu-item text="People Analytics"
-                    icon="presentation-chart-bar"></livewire:sidebar.menu-item>
-                <livewire:sidebar.menu-item text="Engenharia de Cargos"
-                    icon="rectangle-group"></livewire:sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="Colaboradores" is_title="true"></livewire:app.sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="Registro de Ponto" icon="clock"
+                    route="time-record"></livewire:app.sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="Avaliação de Desempenho" icon="clipboard-document-check"
+                    route="performance-review"></livewire:app.sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="Academy" icon="academic-cap"></livewire:app.sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="Comunicação Interna"
+                    icon="megaphone"></livewire:app.sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="Recrutamento e Seleção"
+                    icon="face-smile"></livewire:app.sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="People Analytics"
+                    icon="presentation-chart-bar"></livewire:app.sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="Engenharia de Cargos"
+                    icon="rectangle-group"></livewire:app.sidebar.menu-item>
 
-                <livewire:sidebar.menu-item text="Administrativo" is_title="true"></livewire:sidebar.menu-item>
-                <livewire:sidebar.menu-item text="Setores" icon="building-office"></livewire:sidebar.menu-item>
-                <livewire:sidebar.menu-item text="Cargos" icon="user-circle"></livewire:sidebar.menu-item>
-                <livewire:sidebar.menu-item text="Colaboradores" icon="user-group"></livewire:sidebar.menu-item>
-                <livewire:sidebar.menu-item text="Configurações" icon="cog-8-tooth"></livewire:sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="Administrativo" is_title="true"></livewire:app.sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="Setores" icon="building-office"></livewire:app.sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="Cargos" icon="user-circle"></livewire:app.sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="Colaboradores" icon="user-group"></livewire:app.sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="Configurações"
+                    icon="cog-8-tooth"></livewire:app.sidebar.menu-item>
 
-                <livewire:sidebar.menu-item text="Sair" icon="arrow-left-on-rectangle"
-                    route="logout"></livewire:sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="Sair" icon="arrow-left-on-rectangle"
+                    route="logout"></livewire:app.sidebar.menu-item>
 
 
                 <!--

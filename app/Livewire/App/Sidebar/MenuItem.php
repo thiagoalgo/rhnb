@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Sidebar;
+namespace App\Livewire\App\Sidebar;
 
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -16,7 +16,7 @@ class MenuItem extends Component
 
     public function render()
     {
-        return view('livewire.sidebar.menu-item');
+        return view('livewire.app.sidebar.menu-item');
     }
 
 
