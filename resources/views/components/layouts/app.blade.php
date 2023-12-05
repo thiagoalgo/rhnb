@@ -13,7 +13,11 @@
     <tallstackui:script />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <title>{{ $title ?? 'Page Title' }}</title>
+    <title>RH Nada Básico
+        @if (isset($title))
+            - {{ $title }}
+        @endif
+    </title>
 </head>
 
 <body class="bg-slate-100">
