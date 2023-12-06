@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\Home\Home;
+/* use App\Livewire\Home\Home;
 use App\Livewire\Login\Login;
 use App\Livewire\PerformanceReview\PerformanceReview;
 use App\Livewire\TimeRecord\TimeRecord;
@@ -17,4 +17,4 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/time-record', TimeRecord::class)->name('time-record');
     Route::get('/performance-review', PerformanceReview::class)->name('performance-review');
     Route::get('/logout', [Login::class, 'logout'])->name('logout');
-});
+}); */
