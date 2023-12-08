@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\Tenancy\Jobs\DeleteDatabaseJob;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -24,7 +25,13 @@ class TenancyServiceProvider extends ServiceProvider
     {
         return [
             // Tenant events
-            Events\CreatingTenant::class => [],
+            Events\CreatingTenant::class => [
+                JobPipeline::make([
+                    DeleteDatabaseJob::class
+                ])->send(function (Events\CreatingTenant $event) {
+                    return $event->tenant;
+                })->shouldBeQueued(false),
+            ],
             Events\TenantCreated::class => [
                 JobPipeline::make([
                     Jobs\CreateDatabase::class,
