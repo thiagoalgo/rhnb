@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-import forms from '@tailwindcss/forms';
-
 export default {
   presets: [
     require('./vendor/tallstackui/tallstackui/tailwind.config.js')
@@ -11,15 +9,23 @@ export default {
     "./resources/**/*.js",
     "./resources/**/*.vue",
     './vendor/tallstackui/tallstackui/src/**/*.php',
+    './app/Http/Livewire/**/*Table.php',
+    './vendor/power-components/livewire-powergrid/resources/views/**/*.php',
+    './vendor/power-components/livewire-powergrid/src/Themes/Tailwind.php'
   ],
   theme: {
     extend: {
       colors: {
-        'logorhnb': '#281f4f'
+        'logorhnb': '#281f4f',
+        'pg-primary': '#281f4f'
       },
     },
 
   },
-  plugins: [forms],
+  plugins: [
+    require("@tailwindcss/forms")({
+      strategy: 'class',
+    }),
+  ],
 }
 

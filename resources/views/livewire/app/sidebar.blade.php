@@ -32,7 +32,8 @@
                     icon="rectangle-group"></livewire:app.sidebar.menu-item>
 
                 <livewire:app.sidebar.menu-item text="Administrativo" is_title="true"></livewire:app.sidebar.menu-item>
-                <livewire:app.sidebar.menu-item text="Setores" icon="building-office"></livewire:app.sidebar.menu-item>
+                <livewire:app.sidebar.menu-item text="Setores" icon="building-office"
+                    route="department"></livewire:app.sidebar.menu-item>
                 <livewire:app.sidebar.menu-item text="Cargos" icon="user-circle"></livewire:app.sidebar.menu-item>
                 <livewire:app.sidebar.menu-item text="Colaboradores" icon="user-group"></livewire:app.sidebar.menu-item>
                 <livewire:app.sidebar.menu-item text="Configurações"

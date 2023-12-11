@@ -11,10 +11,12 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.2",
+        "power-components/livewire-powergrid": "^5.1",
         "stancl/tenancy": "^3.7",
         "tallstackui/tallstackui": "^1.0"
     },
     "require-dev": {
+        "composer/composer": "^2.6",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",
