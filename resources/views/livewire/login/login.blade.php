@@ -14,6 +14,9 @@
 
                     <div class="mt-8">
                         <form wire:submit="login">
+
+                            @livewire('app.alert.Alert')
+
                             <div class="mt-6">
                                 <x-input id="email" label="E-mail" icon="user" position="right"
                                     wire:model="email" class="py-3" />
