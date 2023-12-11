@@ -31,6 +31,9 @@
             @livewire('app.header')
 
             <div class="main-content flex flex-col flex-grow p-4">
+                
+                @livewire('app.alert.Alert')
+
                 {{ $slot }}
             </div>
 

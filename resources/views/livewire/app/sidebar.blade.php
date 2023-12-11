@@ -6,7 +6,7 @@
         <div class="sidebar-header flex items-center justify-center">
             <div class="inline-flex">
                 <a href="#" class="inline-flex flex-row items-center">
-                    <img src="assets/img/logo-rh-nb.png" alt="Logo RH Nada Básico">
+                    <img src="/assets/img/logo-rh-nb.png" alt="Logo RH Nada Básico">
                 </a>
             </div>
         </div>

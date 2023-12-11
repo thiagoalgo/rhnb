@@ -5,8 +5,7 @@
                 <h1>Setores</h1>
             </div>
             <div class="flex justify-end">
-                {{$page}}
-                <x-button href="{{ route('department-create').$page }}?page={{$page}}">Novo</x-button>
+                <x-button href="{{ route('department-create') }}?page={{ $page }}">Novo</x-button>
             </div>
         </div>
         @livewire('department.department-table')
