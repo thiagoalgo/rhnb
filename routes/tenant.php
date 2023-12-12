@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Livewire\Department\DepartmentCreate;
+use App\Livewire\Department\DepartmentDelete;
 use App\Livewire\Department\Departments;
 use App\Livewire\Department\DepartmentUpdate;
 use App\Livewire\Home\Home;

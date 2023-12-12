@@ -21,7 +21,10 @@
 </head>
 
 <body class="bg-slate-100">
+    
     <x-toast />
+    <x-dialog />
+
     <div class="flex flex-row min-h-screen bg-gray-100 text-gray-800">
 
         @livewire('app.sidebar')

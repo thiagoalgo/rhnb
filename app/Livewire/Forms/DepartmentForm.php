@@ -35,4 +35,9 @@ class DepartmentForm extends Form
             $this->all()
         );
     }
+
+    public function delete()
+    {
+        $this->department->delete();
+    }
 }
