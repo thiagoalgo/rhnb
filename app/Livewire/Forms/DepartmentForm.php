@@ -8,13 +8,31 @@ use Livewire\Form;
 
 class DepartmentForm extends Form
 {
+    public ?Department $department;
+
     #[Validate('required|min:3|max:255')]
     public $name = '';
+
+    public function setDepartment(Department $department)
+    {
+        $this->department = $department;
+        $this->name = $department->name;
+    }
+
 
     public function strore()
     {
         $this->validate();
 
-        Department::create($this->all());
+        Department::create($this->only(['name']));
+    }
+
+    public function update()
+    {
+        $this->validate();
+
+        $this->department->update(
+            $this->all()
+        );
     }
 }

@@ -5,7 +5,7 @@
                 <h1>Setores - Novo</h1>
             </div>
             <div class="flex justify-end">
-                <x-button href="{{ route('department') }}">Voltar</x-button>
+                <x-button href="{{ route('departments') }}">Voltar</x-button>
             </div>
         </div>
 
