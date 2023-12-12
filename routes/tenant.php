@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-use App\Livewire\Department\Department;
 use App\Livewire\Department\DepartmentCreate;
-use App\Livewire\Department\DepartmentForm;
-use App\Livewire\Department\DepartmentIndex;
+use App\Livewire\Department\Departments;
 use App\Livewire\Home\Home;
 use App\Livewire\Labs\Tenancy;
 use App\Livewire\Login\Login;
@@ -29,7 +27,7 @@ Route::middleware([
         Route::get('/home', Home::class)->name('home');
         Route::get('/time-record', TimeRecord::class)->name('time-record');
         Route::get('/performance-review', PerformanceReview::class)->name('performance-review');
-        Route::get('/department', DepartmentIndex::class)->name('department');
+        Route::get('/department', Departments::class)->name('department');
         Route::get('/department/create', DepartmentCreate::class)->name('department-create');
         Route::get('/logout', [Login::class, 'logout'])->name('logout');
     });
