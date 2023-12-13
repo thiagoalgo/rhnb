@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
+<!-- https://preline.co/examples/html/application-layout-sidebar-and-header.html -->
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,40 +13,50 @@
     </style>
 
     <tallstackui:script />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite([
+        'resources/css/app.css',
+        'resources/css/hs.theme-appearance.css',
+        'resources/js/app.js',
+    ])
 
     <title>RH Nada Básico
         @if (isset($title))
             - {{ $title }}
         @endif
     </title>
+
+    
 </head>
 
-<body class="bg-slate-100">
-    
+<body class="bg-gray-50 dark:bg-slate-900">
+    @vite(['resources/js/hs.theme-appearance.js',])
+
     <x-toast />
     <x-dialog />
 
-    <div class="flex flex-row min-h-screen bg-gray-100 text-gray-800">
+    <!-- ========== HEADER ========== -->
+    @livewire('app.header')
+    <!-- ========== END HEADER ========== -->
 
-        @livewire('app.sidebar')
+    <!-- ========== MAIN CONTENT ========== -->
+    @livewire('app.sidebar')
 
-        <main class="main flex flex-col flex-grow -ml-64 md:ml-0 transition-all duration-150 ease-in">
+    <!-- Content -->
+    <div class="w-full pt-6 px-4 sm:px-6 md:px-8 lg:ps-72">
+        @livewire('app.alert.Alert')
+        
+        {{ $slot }}
 
-            @livewire('app.header')
-
-            <div class="main-content flex flex-col flex-grow p-4">
-                
-                @livewire('app.alert.Alert')
-
-                {{ $slot }}
-            </div>
-
-            @livewire('app.footer')
-
-        </main>
+        @livewire('app.footer')
     </div>
+    <!-- End Content -->
+    <!-- ========== END MAIN CONTENT ========== -->
 
+    <!-- JS Implementing Plugins -->
+
+    <!-- JS PLUGINS -->
+    <!-- Required plugins -->
+    @vite(['resources/js/hs.theme-plugin.js',])
 </body>
 
 </html>
