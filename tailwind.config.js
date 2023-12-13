@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 /** @type {import('tailwindcss').Config} */
 
 export default {
@@ -17,7 +19,7 @@ export default {
     extend: {
       colors: {
         'logorhnb': '#281f4f',
-        'pg-primary': '#281f4f'
+        "pg-primary": colors.gray,
       },
     },
 
