@@ -16,6 +16,7 @@
     @vite([
         'resources/css/app.css',
         'resources/css/hs.theme-appearance.css',
+        'resources/css/custom.css',
         'resources/js/app.js',
     ])
 
