@@ -74,7 +74,7 @@ final class DepartmentTable extends PowerGridComponent
     #[\Livewire\Attributes\On('edit')]
     public function edit($rowId): void
     {
-        $this->redirectRoute('departments-update', $rowId);
+        $this->redirectRoute('departments-update', $rowId, navigate: true);
     }
 
     #[\Livewire\Attributes\On('delete')]

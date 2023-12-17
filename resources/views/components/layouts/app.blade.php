@@ -36,11 +36,15 @@
     <x-dialog />
 
     <!-- ========== HEADER ========== -->
-    @livewire('app.header')
+    @persist('app.header')
+        @livewire('app.header')
+    @endpersist
     <!-- ========== END HEADER ========== -->
 
     <!-- ========== MAIN CONTENT ========== -->
-    @livewire('app.sidebar')
+    @persist('app.sidebar')
+        @livewire('app.sidebar')
+    @endpersist
 
     <!-- Content -->
     <div class="w-full pt-6 px-4 sm:px-6 md:px-8 lg:ps-72">
@@ -48,7 +52,9 @@
         
         {{ $slot }}
 
-        @livewire('app.footer')
+        @persist('app.footer')
+            @livewire('app.footer')
+        @endpersist
     </div>
     <!-- End Content -->
     <!-- ========== END MAIN CONTENT ========== -->

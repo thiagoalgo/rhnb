@@ -4,7 +4,7 @@
         @foreach ($menus as $menu)
             @if (isset($menu['children']))
                 <li class="hs-accordion" id="{{ slugfy($menu['name']) }}-accordion">
-                    <button type="button"
+                    <button id="{{ slugfy($menu['name']) }}-button" type="button"
                         class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-slate-700 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                         <x-icon name="{{ $menu['icon'] }}" class="w-5 h-5" outline />
                         {{ $menu['name'] }}
@@ -19,7 +19,7 @@
                             @foreach ($menu['children'] as $submenu)
                                 @if (isset($submenu['children']))
                                     <li class="hs-accordion" id="{{ slugfy($menu['name']) }}-accordion-{{ slugfy($submenu['name']) }}">
-                                        <button type="button"
+                                        <button type="button"id="{{ slugfy($menu['name']) }}-button-{{ slugfy($submenu['name']) }}"
                                             class="hs-accordion-toggle w-full text-start flex items-center gap-x-3.5 py-2 px-2.5 hs-accordion-active:text-blue-600 hs-accordion-active:hover:bg-transparent text-sm text-slate-700 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-900 dark:text-slate-400 dark:hover:text-slate-300 dark:hs-accordion-active:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
                                             {{ $submenu['name'] }}
                                             
@@ -28,13 +28,13 @@
                                             
                                         </button>
                         
-                                        <div id="users-accordion-sub-1-child"
+                                        <div id="{{ slugfy($menu['name']) }}-accordion-{{ slugfy($submenu['name']) }}-child"
                                             class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 hidden">
                                             <ul class="pt-2 ps-2">
                                                 @foreach ($submenu['children'] as $link) 
                                                 <li>
                                                     <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                                                        href="#">
+                                                        href="#" wire:click="onClick('{{$link['route']}}')">
                                                         {{ $link['name'] }}
                                                     </a>
                                                 </li>
@@ -45,7 +45,7 @@
                                 @else
                                     <li>
                                         <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-slate-400 dark:hover:text-slate-300 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                                            href="#">
+                                            href="#" wire:click="onClick('{{$submenu['route']}}')">
                                             {{ $submenu['name'] }}
                                         </a>
                                     </li>

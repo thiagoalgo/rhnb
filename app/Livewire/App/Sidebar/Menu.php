@@ -14,6 +14,13 @@ class Menu extends Component
         $this->menus = $this->getMenus();
     }
 
+    public function onClick(string $route): void
+    {
+        if ($route) {
+            $this->redirectRoute($route, navigate: true);
+        }
+    }
+
     public function getMenus(): array
     {
         return [
