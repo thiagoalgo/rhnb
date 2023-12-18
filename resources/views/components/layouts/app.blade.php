@@ -57,12 +57,7 @@
         @endpersist
     </div>
     <!-- End Content -->
-    <!-- ========== END MAIN CONTENT ========== -->
-
-    <!-- JS Implementing Plugins -->
-
-    <!-- JS PLUGINS -->
-    <!-- Required plugins -->
+    
     @vite(['resources/js/hs.theme-plugin.js',])
 </body>
 
