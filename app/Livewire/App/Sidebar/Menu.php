@@ -33,6 +33,10 @@ class Menu extends Component
                         'route' => 'departments',
                     ],
                     [
+                        'name' => 'Cargos',
+                        'route' => 'job-titles',
+                    ],
+                    [
                         'name' => 'Sub 1',
                         'children' => [
                             [
