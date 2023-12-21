@@ -28,11 +28,6 @@ class Login extends Component
         }
     }
 
-    public function render()
-    {
-        return view('livewire.login.login')->layout('components.layouts.guest');
-    }
-
     public function login()
     {
         $this->validate();
@@ -48,5 +43,16 @@ class Login extends Component
             $this->setFlash(self::DANGER, 'Credenciais inválidas');
             return redirect()->route('login');
         }
+    }
+
+    public function logout()
+    {
+        auth()->logout();
+        session()->flush();
+        return redirect()->route('login');
+    }
+    public function render()
+    {
+        return view('livewire.login.login')->layout('components.layouts.guest');
     }
 }
