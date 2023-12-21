@@ -2095,7 +2095,7 @@
                     }
                     l || (o && ((i = document.querySelector(o).cloneNode(!0)).classList.remove("hidden"), s = "".concat(i.classList.toString()), i.classList.value = ""), r && i.addEventListener("click", (function () {
                         return t.close()
-                    }), !0), i.setAttribute("data-hs-overlay-backdrop-template", ""), document.body.appendChild(i), setTimeout((function () {
+                    }), !0), i.setAttribute("data-hs-overlay-backdrop-template", ""), document.getElementById("hs-overlay-content").append(i), setTimeout((function () {
                         i.classList.value = s
                     })))
                 }, e.prototype.destroyBackdrop = function () {

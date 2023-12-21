@@ -59,6 +59,12 @@
     <!-- End Content -->
     
     @vite(['resources/js/hs.theme-plugin.js',])
+
+    @persist('hs-overlay.content')
+    <div id="hs-overlay-content">
+
+    </div>
+    @endpersist
 </body>
 
 </html>
