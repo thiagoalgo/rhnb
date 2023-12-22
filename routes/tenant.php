@@ -11,8 +11,6 @@ use App\Livewire\JobTitle\JobTitles;
 use App\Livewire\JobTitle\JobTitleUpdate;
 use App\Livewire\Labs\Tenancy;
 use App\Livewire\Login\Login;
-use App\Livewire\PerformanceReview\PerformanceReview;
-use App\Livewire\TimeRecord\TimeRecord;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
@@ -29,8 +27,6 @@ Route::middleware([
 
     Route::middleware(['auth'])->group(function () {
         Route::get('/home', Home::class)->name('home');
-        Route::get('/time-record', TimeRecord::class)->name('time-record');
-        Route::get('/performance-review', PerformanceReview::class)->name('performance-review');
 
         Route::get('/departments', Departments::class)->name('departments')->middleware('can:manage-departments');
         Route::get('/departments/create', DepartmentCreate::class)->name('departments-create')->middleware('can:manage-departments');
@@ -42,8 +38,4 @@ Route::middleware([
 
         Route::get('/logout', [Login::class, 'logout'])->name('logout');
     });
-
-
-    // Labs
-    Route::get('/tenancy', Tenancy::class)->name('tenancy');
 });

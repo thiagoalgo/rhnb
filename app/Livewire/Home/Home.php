@@ -2,9 +2,9 @@
 
 namespace App\Livewire\Home;
 
-use App\Livewire\BaseComponent;
+use Livewire\Component;
 
-class Home extends BaseComponent
+class Home extends Component
 {
     public string $route = 'home';
 
