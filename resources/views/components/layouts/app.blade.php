@@ -13,12 +13,7 @@
     </style>
 
     <tallstackui:script />
-    @vite([
-        'resources/css/app.css',
-        'resources/css/hs.theme-appearance.css',
-        'resources/css/custom.css',
-        'resources/js/app.js',
-    ])
+    @vite(['resources/css/app.css', 'resources/css/hs.theme-appearance.css', 'resources/css/custom.css', 'resources/js/app.js'])
 
     <title>RH Nada Básico
         @if (isset($title))
@@ -26,11 +21,11 @@
         @endif
     </title>
 
-    
+
 </head>
 
-<body class="bg-gray-50 dark:bg-slate-900">
-    @vite(['resources/js/hs.theme-appearance.js',])
+<body class="bg-gray-50 dark:bg-slate-900 text-sm">
+    @vite(['resources/js/hs.theme-appearance.js'])
 
     <x-toast />
     <x-dialog />
@@ -49,7 +44,7 @@
     <!-- Content -->
     <div class="w-full pt-6 px-4 sm:px-6 md:px-8 lg:ps-72">
         @livewire('app.alert.Alert')
-        
+
         {{ $slot }}
 
         @persist('app.footer')
@@ -57,13 +52,13 @@
         @endpersist
     </div>
     <!-- End Content -->
-    
-    @vite(['resources/js/hs.theme-plugin.js',])
+
+    @vite(['resources/js/hs.theme-plugin.js'])
 
     @persist('hs-overlay.content')
-    <div id="hs-overlay-content">
+        <div id="hs-overlay-content">
 
-    </div>
+        </div>
     @endpersist
 </body>
 
