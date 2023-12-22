@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Enums\Role;
+use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -21,12 +23,29 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Gate::define('manage-departments', function ($user) {
-            return true;
+        $this->defineGates();
+    }
+
+    private function defineGates(): void
+    {
+        Gate::before(function (User $user) {
+            if ($user->role === Role::SUPER_ADMIN->value) {
+                return true;
+            }
         });
 
-        Gate::define('manage-job-titles', function ($user) {
-            return true;
-        });
+        foreach ($this->getGatesAllowed() as $ability => $roles) {
+            Gate::define($ability, function ($user) use ($roles) {
+                return in_array($user->role, $roles);
+            });
+        }
+    }
+
+    private function getGatesAllowed(): array
+    {
+        return [
+            'manage-departments' => [Role::ADMIN->value, Role::EMPLOYEE->value],
+            'manage-job-titles' => [Role::ADMIN->value],
+        ];
     }
 }
