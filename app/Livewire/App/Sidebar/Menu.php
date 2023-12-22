@@ -26,6 +26,11 @@ class Menu extends Component
     {
         return [
             [
+                'name' => 'Home',
+                'icon' => 'home',
+                'route' => 'home'
+            ],
+            [
                 'name' => 'Cadastros',
                 'icon' => 'building-office',
                 'abilities' => ['manage-departments', 'manage-job-titles'],
