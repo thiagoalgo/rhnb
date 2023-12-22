@@ -32,13 +32,13 @@ Route::middleware([
         Route::get('/time-record', TimeRecord::class)->name('time-record');
         Route::get('/performance-review', PerformanceReview::class)->name('performance-review');
 
-        Route::get('/departments', Departments::class)->name('departments');
-        Route::get('/departments/create', DepartmentCreate::class)->name('departments-create');
-        Route::get('/departments/update/{department}', DepartmentUpdate::class)->name('departments-update');
+        Route::get('/departments', Departments::class)->name('departments')->middleware('can:manage-departments');
+        Route::get('/departments/create', DepartmentCreate::class)->name('departments-create')->middleware('can:manage-departments');
+        Route::get('/departments/update/{department}', DepartmentUpdate::class)->name('departments-update')->middleware('can:manage-departments');
 
-        Route::get('/job-titles', JobTitles::class)->name('job-titles');
-        Route::get('/job-titles/create', JobTitleCreate::class)->name('job-titles-create');
-        Route::get('/job-titles/update/{jobTitle}', JobTitleUpdate::class)->name('job-titles-update');
+        Route::get('/job-titles', JobTitles::class)->name('job-titles')->middleware('can:manage-job-titles');
+        Route::get('/job-titles/create', JobTitleCreate::class)->name('job-titles-create')->middleware('can:manage-job-titles');
+        Route::get('/job-titles/update/{jobTitle}', JobTitleUpdate::class)->name('job-titles-update')->middleware('can:manage-job-titles');
 
         Route::get('/logout', [Login::class, 'logout'])->name('logout');
     });

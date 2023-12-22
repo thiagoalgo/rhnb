@@ -19,6 +19,8 @@ class DepartmentCreate extends Component
 
     public function save()
     {
+        $this->authorize('manage-departments');
+
         $this->form->strore();
         $this->setFlash(self::SUCCESS, 'Departamento cadastrado com sucesso.');
         $this->redirectRoute('departments', ['page' => $this->page], navigate: true);

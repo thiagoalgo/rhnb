@@ -19,6 +19,8 @@ class JobTitleCreate extends Component
 
     public function save()
     {
+        $this->authorize('manage-job-titles');
+        
         $this->form->strore();
         $this->setFlash(self::SUCCESS, 'Cargo cadastrado com sucesso.');
         $this->redirectRoute('job-titles', ['page' => $this->page], navigate: true);
