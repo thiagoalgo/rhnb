@@ -9,7 +9,6 @@ use App\Livewire\Home\Home;
 use App\Livewire\JobTitle\JobTitleCreate;
 use App\Livewire\JobTitle\JobTitles;
 use App\Livewire\JobTitle\JobTitleUpdate;
-use App\Livewire\Labs\Tenancy;
 use App\Livewire\Login\Login;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
@@ -24,6 +23,10 @@ Route::middleware([
         return redirect()->route('login');
     });
     Route::get('/login', Login::class)->name('login');
+    Route::get('/password-reset', function () {
+        dump(request());
+    })->name('password.reset');
+
 
     Route::middleware(['auth'])->group(function () {
         Route::get('/home', Home::class)->name('home');

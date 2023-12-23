@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\Login;
 
 use App\Livewire\App\Alert\AlertTrait;
 use App\Traits\LogoutTrait;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Password;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use TallStackUi\Traits\Interactions;
@@ -15,11 +18,13 @@ class Login extends Component
     use AlertTrait;
     use Interactions;
 
-    #[Validate('required|email', onUpdate: false)]
     public string $email = '';
 
-    #[Validate('required|min:6', onUpdate: false)]
     public string $password = '';
+
+    public string $emailReset = '';
+
+    public bool $isVisibleModalForgotPassword = false;
 
     public function mount()
     {
@@ -30,7 +35,10 @@ class Login extends Component
 
     public function login()
     {
-        $this->validate();
+        $this->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6'
+        ]);
 
         $credentials = [
             'email' => $this->email,
@@ -51,6 +59,30 @@ class Login extends Component
         session()->flush();
         return redirect()->route('login');
     }
+
+    public function toggleModalForgotPassword(): void
+    {
+        $this->isVisibleModalForgotPassword = !$this->isVisibleModalForgotPassword;
+        if ($this->isVisibleModalForgotPassword) {
+            $this->js("setTimeout(() => {document.getElementById('emailReset').focus()}, 500)");
+        }
+    }
+
+    public function sendResetEmail(): void
+    {
+        $this->validate([
+            'emailReset' => 'required|email'
+        ]);
+
+        $status = Password::sendResetLink(
+            ['email' => $this->emailReset]
+        );
+
+        $this->setFlash(self::SUCCESS, __($status));
+
+        $this->isVisibleModalForgotPassword = false;
+    }
+
     public function render()
     {
         return view('livewire.login.login')->layout('components.layouts.guest');

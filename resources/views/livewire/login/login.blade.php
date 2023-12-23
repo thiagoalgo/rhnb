@@ -1,4 +1,26 @@
 <div>
+    <x-modal id="modal-forgot-password" wire="isVisibleModalForgotPassword" size="lg" center>
+
+        <x-slot:title>
+            {{ __('Forgot Your Password?') }}
+        </x-slot:title>
+
+        <form wire:submit="sendResetEmail">
+
+            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+
+            <div class="mt-8">
+                <x-input id="emailReset" label="E-mail" position="right" wire:model="emailReset" />
+            </div>
+
+        </form>
+
+        <x-slot:footer>
+            <x-button text="{{ __('Email Password Reset Link') }}" wire:click="sendResetEmail" />
+        </x-slot:footer>
+
+    </x-modal>
+
     <div class="bg-white">
         <div class="flex justify-center h-screen">
             <div class="hidden bg-cover lg:block lg:w-2/3" style="background-image: url(assets/img/cover7.jpg)">
@@ -32,9 +54,9 @@
                             </div>
                         </form>
 
-                        <p class="mt-6 text-sm text-center text-gray-400">Esqueceu a senha? <a href="#"
-                                class="text-blue-500 focus:outline-none focus:underline hover:underline">Clique
-                                aqui</a>.
+                        <p class="mt-6 text-sm text-center text-gray-400">
+                            <a href="#" wire:click="toggleModalForgotPassword"
+                                class="text-blue-500 focus:outline-none focus:underline hover:underline">{{ __('Forgot Your Password?') }}</a>
                         </p>
                     </div>
                 </div>
