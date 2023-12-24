@@ -11,6 +11,7 @@ use App\Livewire\JobTitle\JobTitleCreate;
 use App\Livewire\JobTitle\JobTitles;
 use App\Livewire\JobTitle\JobTitleUpdate;
 use App\Livewire\Auth\Login;
+use App\Livewire\Auth\PasswordReset;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
@@ -25,9 +26,7 @@ Route::middleware([
     });
     Route::get('/login', Login::class)->name('login');
     Route::get('/forgot-password', ForgotPassword::class)->name('forgot-password');
-    Route::get('/password-reset', function () {
-        dump(request());
-    })->name('password.reset');
+    Route::get('/password-reset', PasswordReset::class)->name('password.reset');
 
 
     Route::middleware(['auth'])->group(function () {
