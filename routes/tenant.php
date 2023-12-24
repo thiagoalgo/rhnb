@@ -9,7 +9,7 @@ use App\Livewire\Home\Home;
 use App\Livewire\JobTitle\JobTitleCreate;
 use App\Livewire\JobTitle\JobTitles;
 use App\Livewire\JobTitle\JobTitleUpdate;
-use App\Livewire\Login\Login;
+use App\Livewire\Auth\Login;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;

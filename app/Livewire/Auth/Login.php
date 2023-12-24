@@ -2,13 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Livewire\Login;
+namespace App\Livewire\Auth;
 
 use App\Livewire\App\Alert\AlertTrait;
 use App\Traits\LogoutTrait;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
-use Livewire\Attributes\Validate;
 use Livewire\Component;
 use TallStackUi\Traits\Interactions;
 
@@ -85,6 +84,6 @@ class Login extends Component
 
     public function render()
     {
-        return view('livewire.login.login')->layout('components.layouts.guest');
+        return view('livewire.auth.login')->layout('components.layouts.guest');
     }
 }
