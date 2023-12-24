@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Livewire\Auth\ForgotPassword;
 use App\Livewire\Department\DepartmentCreate;
 use App\Livewire\Department\Departments;
 use App\Livewire\Department\DepartmentUpdate;
@@ -23,6 +24,7 @@ Route::middleware([
         return redirect()->route('login');
     });
     Route::get('/login', Login::class)->name('login');
+    Route::get('/forgot-password', ForgotPassword::class)->name('forgot-password');
     Route::get('/password-reset', function () {
         dump(request());
     })->name('password.reset');

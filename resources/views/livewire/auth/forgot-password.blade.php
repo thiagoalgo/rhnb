@@ -10,29 +10,32 @@
                     </div>
 
                     <div class="mt-8">
-                        <form wire:submit="login">
+
+                        <form wire:submit="sendResetEmail">
 
                             @livewire('app.alert.Alert')
 
+                            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+
                             <div class="mt-6">
-                                <x-input id="email" label="{{ __('E-mail') }}" icon="user" position="right"
+                                <x-input id="email" label="E-mail" icon="user" position="right"
                                     wire:model="email" class="py-3" />
                                 <script>
                                     document.getElementById('email').focus();
                                 </script>
                             </div>
+
                             <div class="mt-6">
-                                <x-password label="{{ __('Password') }}" wire:model="password" class="px-2 py-3" />
+                                <x-button text="{{ __('Send Password Reset Link') }}" class="w-full bg-logorhnb" />
                             </div>
-                            <div class="mt-6">
-                                <x-button text="{{ __('Login') }}" class="w-full bg-logorhnb" />
-                            </div>
+
                         </form>
 
                         <p class="mt-6 text-sm text-center text-gray-400">
-                            <a href="{{ route('forgot-password') }}"
-                                class="text-blue-500 focus:outline-none focus:underline hover:underline">{{ __('Forgot Your Password?') }}</a>
+                            <a href="{{ route('login') }}"
+                                class="text-blue-500 focus:outline-none focus:underline hover:underline">{{ __('Back') }}</a>
                         </p>
+
                     </div>
                 </div>
             </div>

@@ -7,7 +7,6 @@ namespace App\Livewire\Auth;
 use App\Livewire\App\Alert\AlertTrait;
 use App\Traits\LogoutTrait;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Password;
 use Livewire\Component;
 use TallStackUi\Traits\Interactions;
 
@@ -21,9 +20,6 @@ class Login extends Component
 
     public string $password = '';
 
-    public string $emailReset = '';
-
-    public bool $isVisibleModalForgotPassword = false;
 
     public function mount()
     {
@@ -57,29 +53,6 @@ class Login extends Component
         auth()->logout();
         session()->flush();
         return redirect()->route('login');
-    }
-
-    public function toggleModalForgotPassword(): void
-    {
-        $this->isVisibleModalForgotPassword = !$this->isVisibleModalForgotPassword;
-        if ($this->isVisibleModalForgotPassword) {
-            $this->js("setTimeout(() => {document.getElementById('emailReset').focus()}, 500)");
-        }
-    }
-
-    public function sendResetEmail(): void
-    {
-        $this->validate([
-            'emailReset' => 'required|email'
-        ]);
-
-        $status = Password::sendResetLink(
-            ['email' => $this->emailReset]
-        );
-
-        $this->setFlash(self::SUCCESS, __($status));
-
-        $this->isVisibleModalForgotPassword = false;
     }
 
     public function render()
