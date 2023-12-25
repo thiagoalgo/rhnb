@@ -22,7 +22,7 @@ class DepartmentCreate extends Component
         $this->authorize('manage-departments');
 
         $this->form->strore();
-        $this->setFlash(self::SUCCESS, 'Departamento cadastrado com sucesso.');
+        $this->setFlash(self::SUCCESS, __(':entity successfully saved.', ['entity' => __('Department')]));
         $this->redirectRoute('departments', ['page' => $this->page], navigate: true);
     }
 

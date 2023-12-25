@@ -43,7 +43,7 @@ class Login extends Component
         if (Auth::attempt($credentials)) {
             return redirect()->route('home');
         } else {
-            $this->setFlash(self::DANGER, 'Credenciais inválidas');
+            $this->setFlash(self::DANGER, __('The given data was invalid.'));
             return redirect()->route('login');
         }
     }

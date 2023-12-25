@@ -29,7 +29,7 @@ class JobTitleUpdate extends Component
         $this->authorize('manage-job-titles');
 
         $this->form->update();
-        $this->setFlash(self::SUCCESS, 'Cargo alterado com sucesso.');
+        $this->setFlash(self::SUCCESS, __(':entity successfully saved.', ['entity' => __('Job Title')]));
         $this->redirectRoute('job-titles', ['page' => $this->page], navigate: true);
     }
 

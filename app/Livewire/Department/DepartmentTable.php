@@ -80,7 +80,7 @@ final class DepartmentTable extends PowerGridComponent
     #[\Livewire\Attributes\On('delete')]
     public function delete($rowId)
     {
-        $this->dialog()->confirm('Atenção!', 'Deseja realmente excluir este departamento?', [
+        $this->dialog()->confirm(__('Confirm'), __('Do you really want to delete this :entity?', ['entity' => __('Department')]), [
             'confirm' => [
                 'text' => 'Sim',
                 'method' => 'deleteConfirmed',
@@ -96,7 +96,7 @@ final class DepartmentTable extends PowerGridComponent
     {
         $this->form->setDepartment(Department::find($params['rowId']));
         $this->form->delete();
-        $this->setFlash(self::SUCCESS, 'Departamento excluído com sucesso.');
+        $this->setFlash(self::SUCCESS, __(':entity successfully deleted', ['entity' => __('Department')]));
         $this->redirectRoute('departments', navigate: true);
     }
 

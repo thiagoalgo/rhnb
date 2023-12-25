@@ -27,9 +27,9 @@ class DepartmentUpdate extends Component
     public function save()
     {
         $this->authorize('manage-departments');
-        
+
         $this->form->update();
-        $this->setFlash(self::SUCCESS, 'Departamento alterado com sucesso.');
+        $this->setFlash(self::SUCCESS, __(':entity successfully saved.', ['entity' => __('Department')]));
         $this->redirectRoute('departments', ['page' => $this->page], navigate: true);
     }
 

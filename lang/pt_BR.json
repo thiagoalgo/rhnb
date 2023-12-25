@@ -132,5 +132,12 @@
   "results": "resultados",
   "to": "até",
   "Back": "Voltar",
-  ":entity saved with successfully.": ":entity salvo(a) com sucesso."
+  "New": "Novo(a)",
+  ":entity successfully saved.": ":entity salvo(a) com sucesso.",
+  ":entity deleted successfully.": ":entity excluído(a) com sucesso.",
+  "Do you really want to delete this :entity?": "Deseja realmente excluir este(a) :entity?",
+  "Job Title": "Cargo",
+  "Job Titles": "Cargos",
+  "Department": "Setor",
+  "Departments": "Setores"
 }

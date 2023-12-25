@@ -61,7 +61,7 @@ final class JobTitleTable extends PowerGridComponent
     {
         return [
             Column::make('ID', 'id'),
-            Column::make('Nome', 'name'),
+            Column::make(__('Name'), 'name'),
             Column::action('Action')
         ];
     }
@@ -80,7 +80,7 @@ final class JobTitleTable extends PowerGridComponent
     #[\Livewire\Attributes\On('delete')]
     public function delete($rowId)
     {
-        $this->dialog()->confirm('Atenção!', 'Deseja realmente excluir este departamento?', [
+        $this->dialog()->confirm(__('Confirm'), __('Do you really want to delete this :entity?', ['entity' => __('Job Title')]), [
             'confirm' => [
                 'text' => 'Sim',
                 'method' => 'deleteConfirmed',
@@ -96,7 +96,7 @@ final class JobTitleTable extends PowerGridComponent
     {
         $this->form->setJobTitle(JobTitle::find($params['rowId']));
         $this->form->delete();
-        $this->setFlash(self::SUCCESS, 'Cargo excluído com sucesso.');
+        $this->setFlash(self::SUCCESS, __(':entity successfully deleted', ['entity' => __('Job Title')]));
         $this->redirectRoute('job-titles', navigate: true);
     }
 

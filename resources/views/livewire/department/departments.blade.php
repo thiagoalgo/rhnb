@@ -2,10 +2,11 @@
     <x-card>
         <div class="w-full grid grid-cols-2 mb-10">
             <div>
-                <h1>Setores</h1>
+                <h1>{{ __('Departments') }}</h1>
             </div>
             <div class="flex justify-end">
-                <x-button href="{{ route('departments-create') }}?page={{ $page }}" wire:navigate>Novo</x-button>
+                <x-button href="{{ route('departments-create') }}?page={{ $page }}"
+                    wire:navigate>{{ __('New') }}</x-button>
             </div>
         </div>
         @livewire('department.department-table')

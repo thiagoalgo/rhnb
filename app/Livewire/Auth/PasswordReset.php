@@ -61,7 +61,7 @@ class PasswordReset extends Component
             return;
         }
 
-        $this->setFlash(self::SUCCESS, __(':entity saved with success.', ['entity' => __('Password')]));
+        $this->setFlash(self::SUCCESS, __(':entity successfully saved.', ['entity' => __('Password')]));
         redirect()->route('login');
     }
 
