@@ -26,7 +26,7 @@ class Menu extends Component
     {
         return [
             [
-                'name' => 'Home',
+                'name' => __('Home'),
                 'icon' => 'home',
                 'route' => 'home'
             ],
@@ -36,19 +36,19 @@ class Menu extends Component
                 'abilities' => ['manage-departments', 'manage-job-titles'],
                 'children' => [
                     [
-                        'name' => 'Setores',
+                        'name' => __('Departments'),
                         'route' => 'departments',
                         'abilities' => 'manage-departments',
                     ],
                     [
-                        'name' => 'Cargos',
+                        'name' => __('Job Titles'),
                         'route' => 'job-titles',
                         'abilities' => 'manage-job-titles',
                     ],
                 ],
             ],
             [
-                'name' => 'Configurações',
+                'name' => __('Configs'),
                 'icon' => 'cog-8-tooth',
                 'children' => [
                     [
@@ -88,7 +88,7 @@ class Menu extends Component
                 ]
             ],
             [
-                'name' => 'Sair',
+                'name' => __('Exit'),
                 'icon' => 'arrow-left-on-rectangle',
                 'route' => 'logout'
             ],

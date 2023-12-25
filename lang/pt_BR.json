@@ -131,6 +131,8 @@
   "of": "de",
   "results": "resultados",
   "to": "até",
+  "Signed in as": "Autenticado como",
+  "Search": "Buscar",
   "Back": "Voltar",
   "New": "Novo(a)",
   ":entity successfully saved.": ":entity salvo(a) com sucesso.",
@@ -139,5 +141,7 @@
   "Job Title": "Cargo",
   "Job Titles": "Cargos",
   "Department": "Setor",
-  "Departments": "Setores"
+  "Departments": "Setores",
+  "Configs": "Configurações",
+  "Exit": "Sair"
 }
