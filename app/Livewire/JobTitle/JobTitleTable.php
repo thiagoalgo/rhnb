@@ -74,7 +74,7 @@ final class JobTitleTable extends PowerGridComponent
     #[\Livewire\Attributes\On('edit')]
     public function edit($rowId): void
     {
-        $this->redirectRoute('job-titles-update', $rowId, navigate: true);
+        $this->redirectRoute('job-titles-edit', $rowId, navigate: true);
     }
 
     #[\Livewire\Attributes\On('delete')]

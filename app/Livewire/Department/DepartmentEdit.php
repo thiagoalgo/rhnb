@@ -10,7 +10,7 @@ use App\Models\Department;
 use Livewire\Component;
 use TallStackUi\Traits\Interactions;
 
-class DepartmentUpdate extends Component
+class DepartmentEdit extends Component
 {
     use Interactions;
     use AlertTrait;

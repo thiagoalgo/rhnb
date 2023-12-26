@@ -10,7 +10,7 @@ use App\Models\JobTitle;
 use Livewire\Component;
 use TallStackUi\Traits\Interactions;
 
-class JobTitleUpdate extends Component
+class JobTitleEdit extends Component
 {
     use Interactions;
     use AlertTrait;
