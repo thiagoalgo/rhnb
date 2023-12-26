@@ -96,7 +96,7 @@ final class JobTitleTable extends PowerGridComponent
     {
         $this->form->setJobTitle(JobTitle::find($params['rowId']));
         $this->form->delete();
-        $this->setFlash(self::SUCCESS, __(':entity successfully deleted', ['entity' => __('Job Title')]));
+        $this->setFlash(self::SUCCESS, __(':entity deleted successfully.', ['entity' => __('Job Title')]));
         $this->redirectRoute('job-titles', navigate: true);
     }
 
@@ -104,14 +104,18 @@ final class JobTitleTable extends PowerGridComponent
     {
         return [
             Button::add('edit')
-                ->slot('Editar')
+                ->bladeComponent('button.circle', [
+                    'primary' => true,
+                    'icon' => 'pencil',
+                ])
                 ->id()
-                ->class('pg-btn-white dark:ring-pg-primary-600 dark:border-pg-primary-600 dark:hover:bg-pg-primary-700 dark:ring-offset-pg-primary-800 dark:text-pg-primary-300 dark:bg-pg-primary-700')
                 ->dispatch('edit', ['rowId' => $row->id]),
             Button::add('delete')
-                ->slot('Excluir')
+                ->bladeComponent('button.circle', [
+                    'color' => 'red',
+                    'icon' => 'trash',
+                ])
                 ->id()
-                ->class('pg-btn-white dark:ring-pg-primary-600 dark:border-pg-primary-600 dark:hover:bg-pg-primary-700 dark:ring-offset-pg-primary-800 dark:text-pg-primary-300 dark:bg-pg-primary-700')
                 ->dispatch('delete', ['rowId' => $row->id])
         ];
     }
