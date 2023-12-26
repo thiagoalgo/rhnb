@@ -12,18 +12,22 @@
         </div>
         <hr>
 
-        <form wire:submit="save" class="w-1/4">
-            <div class="mt-6">
+        <form wire:submit="save">
+
+            <div class="grid grid-cols-1 lg:grid-cols-3">
+
                 <div class="mt-6">
                     <x-input id="name" wire:model="form.name" label="Nome" />
                 </div>
-                <script>
-                    document.getElementById('name').focus();
-                </script>
-                <div class="mt-6">
-                    <x-button text="{{ __('Save') }}" />
-                </div>
+
+            </div>
+
+            <div class="mt-6">
+                <x-button text="{{ __('Save') }}" />
             </div>
         </form>
     </x-card>
+    <script>
+        document.getElementById('name').focus();
+    </script>
 </div>
