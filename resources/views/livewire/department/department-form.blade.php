@@ -1,16 +1,5 @@
 <div>
     <x-card>
-        <div class="grid grid-cols-2 mb-5">
-            <div>
-                <h1 class="text-lg font-semibold">{{ __('Departments') }}</h1>
-            </div>
-            <div class="flex justify-end">
-                <x-button href="{{ route('departments') }}" wire:navigate>
-                    {{ __('Back') }}
-                </x-button>
-            </div>
-        </div>
-        <hr>
         <form wire:submit="save">
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
@@ -21,8 +10,14 @@
 
             </div>
 
-            <div class="mt-6">
-                <x-button text="{{ __('Save') }}" />
+            <div class="grid grid-cols-2 lg:grid-cols-2 mt-6">
+                <div>
+                    <x-button text="{{ __('Save') }}" />
+                </div>
+                <div class="flex justify-end">
+                    <x-button href="{{ route('departments') }}" wire:navigate text="{{ __('Back') }}"
+                        color="secondary" outline />
+                </div>
             </div>
         </form>
     </x-card>

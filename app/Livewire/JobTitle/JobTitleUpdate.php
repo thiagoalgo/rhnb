@@ -30,7 +30,7 @@ class JobTitleUpdate extends Component
 
         $this->form->update();
         $this->setFlash(self::SUCCESS, __(':entity successfully saved.', ['entity' => __('Job Title')]));
-        $this->redirectRoute('job-titles', ['page' => $this->page], navigate: true);
+        $this->redirectRoute('job-titles', navigate: true);
     }
 
     public function render()

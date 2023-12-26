@@ -1,13 +1,10 @@
 <div>
     <x-card>
-        <div class="w-full grid grid-cols-2 mb-10">
-            <div>
-                <h1 class="text-lg font-semibold">{{ __('Departments') }}</h1>
-            </div>
-            <div class="flex justify-end">
-                <x-button href="{{ route('departments-create') }}" wire:navigate>{{ __('New') }}</x-button>
-            </div>
+
+        <div class="w-full mb-5 flex justify-end">
+            <x-button href="{{ route('departments-create') }}" wire:navigate text="{{ __('New') }}" />
         </div>
+
         @livewire('department.department-table')
     </x-card>
 </div>

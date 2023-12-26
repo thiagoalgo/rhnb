@@ -31,7 +31,7 @@ class DepartmentUpdate extends Component
 
         $this->form->update();
         $this->setFlash(self::SUCCESS, __(':entity successfully saved.', ['entity' => __('Department')]));
-        $this->redirectRoute('departments', ['page' => $this->page], navigate: true);
+        $this->redirectRoute('departments', navigate: true);
     }
 
     public function render()

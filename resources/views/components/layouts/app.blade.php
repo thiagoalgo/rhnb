@@ -31,18 +31,20 @@
     <x-dialog />
 
     <!-- ========== HEADER ========== -->
-    @persist('app.header')
-        @livewire('app.header')
-    @endpersist
+
+    @livewire('app.header', ['title' => $title ?? null])
+
     <!-- ========== END HEADER ========== -->
 
     <!-- ========== MAIN CONTENT ========== -->
     @persist('app.sidebar')
-        @livewire('app.sidebar')
+        @livewire('app.sidebar', ['title' => $title ?? null])
     @endpersist
 
     <!-- Content -->
+
     <div class="w-full pt-6 px-4 sm:px-6 md:px-8 lg:ps-72">
+
         @livewire('app.alert.Alert')
 
         {{ $slot }}
