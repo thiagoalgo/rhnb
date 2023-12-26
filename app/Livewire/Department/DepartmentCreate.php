@@ -1,10 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\Department;
 
 use App\Livewire\App\Alert\AlertTrait;
 use App\Livewire\Forms\DepartmentForm;
-use Livewire\Attributes\Url;
 use Livewire\Component;
 use TallStackUi\Traits\Interactions;
 
@@ -14,8 +15,12 @@ class DepartmentCreate extends Component
     use AlertTrait;
     public DepartmentForm $form;
 
-    #[Url(keep: true)]
-    public $page = '';
+    private $title;
+
+    public function mount(): void
+    {
+        $this->title = __('Departments') . ' - ' . __('Create');
+    }
 
     public function save()
     {
@@ -28,6 +33,7 @@ class DepartmentCreate extends Component
 
     public function render()
     {
-        return view('livewire.department.department-form');
+        return view('livewire.department.department-form')
+            ->title($this->title);
     }
 }

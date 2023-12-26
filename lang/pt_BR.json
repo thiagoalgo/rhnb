@@ -135,6 +135,7 @@
   "Search": "Buscar",
   "Back": "Voltar",
   "New": "Novo(a)",
+  "Edit": "Editar",
   ":entity successfully saved.": ":entity salvo(a) com sucesso.",
   ":entity deleted successfully.": ":entity excluído(a) com sucesso.",
   "Do you really want to delete this :entity?": "Deseja realmente excluir este(a) :entity?",
