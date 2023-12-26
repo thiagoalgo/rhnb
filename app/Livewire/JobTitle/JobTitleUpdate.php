@@ -1,11 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\JobTitle;
 
 use App\Livewire\App\Alert\AlertTrait;
 use App\Livewire\Forms\JobTitleForm;
 use App\Models\JobTitle;
-use Livewire\Attributes\Url;
 use Livewire\Component;
 use TallStackUi\Traits\Interactions;
 
@@ -16,11 +17,10 @@ class JobTitleUpdate extends Component
 
     public JobTitleForm $form;
 
-    #[Url(keep: true)]
-    public $page = '';
-
     public function mount(JobTitle $jobTitle)
     {
+        $this->title = __('Job Titles') . ' - ' . __('Edit');
+
         $this->form->setJobTitle($jobTitle);
     }
 
@@ -35,6 +35,7 @@ class JobTitleUpdate extends Component
 
     public function render()
     {
-        return view('livewire.job-title.job-title-form');
+        return view('livewire.job-title.job-title-form')
+            ->title($this->title);
     }
 }

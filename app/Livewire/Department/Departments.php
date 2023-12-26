@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class Departments extends Component
 {
-    private $title;
+    private string $title;
 
     public function mount(): void
     {

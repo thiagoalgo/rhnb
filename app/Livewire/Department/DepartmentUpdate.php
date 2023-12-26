@@ -17,7 +17,7 @@ class DepartmentUpdate extends Component
 
     public DepartmentForm $form;
 
-    private $title;
+    private string $title;
 
     public function mount(Department $department)
     {

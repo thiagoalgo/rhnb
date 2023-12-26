@@ -1,16 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\JobTitle;
 
-use Livewire\Attributes\Url;
 use Livewire\Component;
 
 class JobTitles extends Component
 {
-    #[Url]
-    public $page = '';
+    private string $title;
+
+    public function mount(): void
+    {
+        $this->title = __('Job Titles');
+    }
+
     public function render()
     {
-        return view('livewire.job-title.job-titles');
+        return view('livewire.job-title.job-titles')
+            ->title($this->title);
     }
 }

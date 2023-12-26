@@ -15,7 +15,7 @@ class DepartmentCreate extends Component
     use AlertTrait;
     public DepartmentForm $form;
 
-    private $title;
+    private string $title;
 
     public function mount(): void
     {

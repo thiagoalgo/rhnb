@@ -1,13 +1,16 @@
 <div>
     <x-card>
-        <div class="w-full grid grid-cols-2 mb-10">
+        <div class="grid grid-cols-2 mb-5">
             <div>
-                <h1>{{ __('Job Titles') }}</h1>
+                <h1 class="text-lg font-semibold">{{ __('Job Titles') }}</h1>
             </div>
             <div class="flex justify-end">
-                <x-button href="{{ route('job-titles') }}" wire:navigate>{{ __('Back') }}</x-button>
+                <x-button href="{{ route('job-titles') }}" wire:navigate>
+                    {{ __('Back') }}
+                </x-button>
             </div>
         </div>
+        <hr>
 
         <form wire:submit="save" class="w-1/4">
             <div class="mt-6">
