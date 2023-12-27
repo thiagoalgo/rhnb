@@ -46,7 +46,7 @@ class Menu extends Component
                         'abilities' => 'manage-job-titles',
                     ],
                     [
-                        'name' => __('Employess'),
+                        'name' => __('Employees'),
                         'route' => 'employees',
                         'abilities' => 'manage-employees',
                     ],

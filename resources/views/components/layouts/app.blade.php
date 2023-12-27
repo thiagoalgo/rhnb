@@ -49,10 +49,14 @@
 
         {{ $slot }}
 
-        @persist('app.footer')
-            @livewire('app.footer')
-        @endpersist
     </div>
+
+    @persist('app.footer')
+        <div class="w-full pt-6 px-4 sm:px-6 md:px-8 lg:ps-72 flex justify-center">
+            @livewire('app.footer')
+        </div>
+    @endpersist
+
     <!-- End Content -->
 
     @vite(['resources/js/hs.theme-plugin.js'])
