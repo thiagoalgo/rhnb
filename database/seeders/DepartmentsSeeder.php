@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Department;
 use App\Models\Tenant;
-use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DepartmentsSeeder extends Seeder
@@ -16,9 +15,9 @@ class DepartmentsSeeder extends Seeder
     {
         Tenant::all()->runForEach(function (Tenant $tenant) {
             $departments = [
+                'Recursos Humanos',
                 'Administrativo',
                 'Financeiro',
-                'Recursos Humanos',
                 'Comercial'
             ];
 

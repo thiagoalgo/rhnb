@@ -46,6 +46,7 @@ class AuthServiceProvider extends ServiceProvider
         return [
             'manage-departments' => [Role::ADMIN->value],
             'manage-job-titles' => [Role::ADMIN->value],
+            'manage-employees' => [Role::ADMIN->value],
         ];
     }
 }

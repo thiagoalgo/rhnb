@@ -137,6 +137,8 @@
   "Actions": "Ações",
   "New": "Novo(a)",
   "Edit": "Editar",
+  "Configs": "Configurações",
+  "Exit": "Sair",
   ":entity successfully saved.": ":entity salvo(a) com sucesso.",
   ":entity deleted successfully.": ":entity excluído(a) com sucesso.",
   "Do you really want to delete this :entity?": "Deseja realmente excluir este(a) :entity?",
@@ -144,6 +146,7 @@
   "Job Titles": "Cargos",
   "Department": "Setor",
   "Departments": "Setores",
-  "Configs": "Configurações",
-  "Exit": "Sair"
+  "Employee": "Colaborador",
+  "Employees": "Colaboradores",
+  "Registration": "Matrícula"
 }
