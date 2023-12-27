@@ -8,7 +8,6 @@ use App\Models\JobTitle;
 use Illuminate\Database\Eloquent\Builder;
 use PowerComponents\LivewirePowerGrid\Button;
 use PowerComponents\LivewirePowerGrid\Column;
-use PowerComponents\LivewirePowerGrid\Exportable;
 use PowerComponents\LivewirePowerGrid\Footer;
 use PowerComponents\LivewirePowerGrid\Header;
 use PowerComponents\LivewirePowerGrid\PowerGrid;
@@ -30,9 +29,6 @@ final class JobTitleTable extends PowerGridComponent
         //$this->showCheckBox();
 
         return [
-            Exportable::make('export')
-                ->striped()
-                ->type(Exportable::TYPE_XLS, Exportable::TYPE_CSV),
             Header::make()
                 ->showSearchInput()
                 ->showToggleColumns(),
@@ -61,8 +57,10 @@ final class JobTitleTable extends PowerGridComponent
     {
         return [
             Column::make('ID', 'id'),
-            Column::make(__('Name'), 'name'),
-            Column::action('Action')
+            Column::make(__('Name'), 'name')
+                ->searchable()
+                ->sortable(),
+            Column::action(__('Actions'))
         ];
     }
 
@@ -107,6 +105,7 @@ final class JobTitleTable extends PowerGridComponent
                 ->bladeComponent('button.circle', [
                     'primary' => true,
                     'icon' => 'pencil',
+                    'sm' => true
                 ])
                 ->id()
                 ->dispatch('edit', ['rowId' => $row->id]),
@@ -114,6 +113,7 @@ final class JobTitleTable extends PowerGridComponent
                 ->bladeComponent('button.circle', [
                     'color' => 'red',
                     'icon' => 'trash',
+                    'sm' => true
                 ])
                 ->id()
                 ->dispatch('delete', ['rowId' => $row->id])

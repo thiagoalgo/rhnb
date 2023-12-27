@@ -30,9 +30,6 @@ final class DepartmentTable extends PowerGridComponent
         //$this->showCheckBox();
 
         return [
-            Exportable::make('export')
-                ->striped()
-                ->type(Exportable::TYPE_XLS, Exportable::TYPE_CSV),
             Header::make()
                 ->showSearchInput()
                 ->showToggleColumns(),
@@ -61,8 +58,10 @@ final class DepartmentTable extends PowerGridComponent
     {
         return [
             Column::make('ID', 'id'),
-            Column::make('Nome', 'name'),
-            Column::action('Action')
+            Column::make(__('Name'), 'name')
+                ->searchable()
+                ->sortable(),
+            Column::action(__('Actions'))
         ];
     }
 
@@ -107,6 +106,7 @@ final class DepartmentTable extends PowerGridComponent
                 ->bladeComponent('button.circle', [
                     'primary' => true,
                     'icon' => 'pencil',
+                    'sm' => true
                 ])
                 ->id()
                 ->dispatch('edit', ['rowId' => $row->id]),
@@ -114,6 +114,7 @@ final class DepartmentTable extends PowerGridComponent
                 ->bladeComponent('button.circle', [
                     'color' => 'red',
                     'icon' => 'trash',
+                    'sm' => true
                 ])
                 ->id()
                 ->dispatch('delete', ['rowId' => $row->id])
