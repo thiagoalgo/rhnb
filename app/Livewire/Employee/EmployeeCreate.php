@@ -6,6 +6,8 @@ namespace App\Livewire\Employee;
 
 use App\Livewire\App\Alert\AlertTrait;
 use App\Livewire\Forms\EmployeeForm;
+use App\Models\Department;
+use App\Models\JobTitle;
 use Livewire\Component;
 use TallStackUi\Traits\Interactions;
 
@@ -13,6 +15,11 @@ class EmployeeCreate extends Component
 {
     use Interactions;
     use AlertTrait;
+
+    public array $departments;
+
+    public array $jobTitles;
+
     public EmployeeForm $form;
 
     private string $title;
@@ -20,6 +27,9 @@ class EmployeeCreate extends Component
     public function mount(): void
     {
         $this->title = __('Employees') . ' - ' . __('Create');
+
+        $this->departments = Department::all()->toArray();
+        $this->jobTitles = JobTitle::all()->toArray();
     }
 
     public function save()
