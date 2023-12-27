@@ -5,7 +5,23 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
                 <div class="mt-6">
-                    <x-input id="name" wire:model="form.name" label="Nome" />
+                    <x-input id="name" wire:model="form.name" label="{{ __('Name') }}" />
+                </div>
+                <div class="mt-6">
+                    <x-input id="email" wire:model="form.email" label="{{ __('Email') }}" />
+                </div>
+                <div class="mt-6">
+                    <x-input id="registration" wire:model="form.registration" label="{{ __('Registration') }}" />
+                </div>
+
+                <div class="mt-6">
+                    <x-select.styled id="department_id" wire:model="form.department_id" label="{{ __('Department') }}"
+                        :options="$departments" select="label:name|value:id" />
+                </div>
+
+                <div class="mt-6">
+                    <x-select.styled id="job_title_id" wire:model="form.job_title_id" label="{{ __('Job Title') }}"
+                        :options="$jobTitles" select="label:name|value:id" />
                 </div>
 
             </div>
@@ -15,8 +31,8 @@
                     <x-button text="{{ __('Save') }}" />
                 </div>
                 <div class="flex justify-end">
-                    <x-button href="{{ route('employees') }}" wire:navigate text="{{ __('Back') }}"
-                        color="secondary" outline />
+                    <x-button href="{{ route('employees') }}" wire:navigate text="{{ __('Back') }}" color="secondary"
+                        outline />
                 </div>
             </div>
         </form>

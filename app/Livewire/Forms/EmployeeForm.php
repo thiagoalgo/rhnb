@@ -8,15 +8,32 @@ use Livewire\Form;
 
 class EmployeeForm extends Form
 {
-    public ?Employee $department;
+    public ?Employee $employee;
 
     #[Validate('required|min:3|max:255')]
-    public $name = '';
+    public string $name = '';
 
-    public function setEmployee(Employee $department)
+    #[Validate('required|min:3|max:255')]
+    public string $email = '';
+
+    #[Validate('max:20')]
+    public ?string $registration = '';
+
+    #[Validate('int|required')]
+    public int $department_id;
+
+    #[Validate('int|required')]
+    public int $job_title_id;
+
+    public function setEmployee(Employee $employee)
     {
-        $this->department = $department;
-        $this->name = $department->name;
+
+        $this->employee = $employee;
+        $this->name = $employee->user->name;
+        $this->email = $employee->user->email;
+        $this->registration = $employee->registration;
+        $this->department_id = $employee->department_id;
+        $this->job_title_id = $employee->job_title_id;
     }
 
 
@@ -31,14 +48,14 @@ class EmployeeForm extends Form
     {
         $this->validate();
 
-        $this->department->update(
+        $this->employee->update(
             $this->all()
         );
     }
 
     public function delete()
     {
-        $this->department->user()->delete();
-        $this->department->delete();
+        $this->employee->user()->delete();
+        $this->employee->delete();
     }
 }

@@ -45,7 +45,7 @@ Route::middleware([
 
         Route::get('/employees', Employees::class)->name('employees')->middleware('can:manage-employees');
         Route::get('/employees/create', EmployeeCreate::class)->name('employees-create')->middleware('can:manage-employees');
-        Route::get('/employees/{department}/edit', EmployeeEdit::class)->name('employees-edit')->middleware('can:manage-employees');
+        Route::get('/employees/{employee}/edit', EmployeeEdit::class)->name('employees-edit')->middleware('can:manage-employees');
 
         Route::get('/logout', [Login::class, 'logout'])->name('logout');
     });
