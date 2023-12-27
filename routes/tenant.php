@@ -11,6 +11,9 @@ use App\Livewire\JobTitle\JobTitles;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\PasswordReset;
 use App\Livewire\Department\DepartmentEdit;
+use App\Livewire\Employee\EmployeeCreate;
+use App\Livewire\Employee\EmployeeEdit;
+use App\Livewire\Employee\Employees;
 use App\Livewire\JobTitle\JobTitleEdit;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
@@ -39,6 +42,10 @@ Route::middleware([
         Route::get('/job-titles', JobTitles::class)->name('job-titles')->middleware('can:manage-job-titles');
         Route::get('/job-titles/create', JobTitleCreate::class)->name('job-titles-create')->middleware('can:manage-job-titles');
         Route::get('/job-titles/{jobTitle}/update', JobTitleEdit::class)->name('job-titles-edit')->middleware('can:manage-job-titles');
+
+        Route::get('/employees', Employees::class)->name('employees')->middleware('can:manage-employees');
+        Route::get('/employees/create', EmployeeCreate::class)->name('employees-create')->middleware('can:manage-employees');
+        Route::get('/employees/{department}/edit', EmployeeEdit::class)->name('employees-edit')->middleware('can:manage-employees');
 
         Route::get('/logout', [Login::class, 'logout'])->name('logout');
     });

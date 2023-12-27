@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\Role;
 use App\Models\Department;
 use App\Models\Employee;
 use App\Models\JobTitle;
@@ -20,6 +21,7 @@ class UsersSeeder extends Seeder
             $user = User::query()->create([
                 'name' => 'Sr. ' . ucfirst($tenant->id),
                 'email' => $tenant->id . '@gmail.com',
+                'role' => Role::ADMIN->value,
                 'password' => bcrypt('123456'),
             ]);
 
