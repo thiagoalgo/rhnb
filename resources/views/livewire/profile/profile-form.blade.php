@@ -3,7 +3,7 @@
 
         <x-custom.card class="w-full">
             <form wire:submit="save">
-                <x-custom.form-title text="{{ __('Profile Information') }}" />
+                <x-custom.form-title text="{{ __('Profile Informations') }}" />
 
                 <div class="grid grid-cols-1 gap-2 lg:gap-4">
 

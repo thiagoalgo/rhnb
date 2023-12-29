@@ -56,7 +56,7 @@ class EmployeeForm extends Form
             'department_id' => ['int', 'required'],
             'job_title_id' => ['int', 'required'],
             'email' => ['required', 'email'],
-            'password' => ['required', 'confirmed', 'min:6', 'max:255'],
+            'password' => ['required', 'min:6', 'max:255', 'confirmed'],
         ]);
 
         $user = User::query()->create([
