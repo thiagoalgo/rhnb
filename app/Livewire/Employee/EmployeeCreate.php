@@ -20,9 +20,11 @@ class EmployeeCreate extends Component
 
     public array $jobTitles;
 
+    public array $roles;
+
     public EmployeeForm $form;
 
-    private string $title;
+    public string $title;
 
     public function mount(): void
     {
@@ -30,6 +32,7 @@ class EmployeeCreate extends Component
 
         $this->departments = Department::all()->toArray();
         $this->jobTitles = JobTitle::all()->toArray();
+        $this->roles = roleToSelect();
     }
 
     public function save()

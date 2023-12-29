@@ -148,5 +148,9 @@
   "Departments": "Setores",
   "Employee": "Colaborador",
   "Employees": "Colaboradores",
-  "Registration": "Matrícula"
+  "Registration": "Matrícula",
+  "Role": "Papel",
+  "Personal Data": "Dados Pessoais",
+  "Access Data": "Dados de Acesso",
+  "Send email with the password to employee?": "Enviar e-mail com a senha para o colaborador?"
 }

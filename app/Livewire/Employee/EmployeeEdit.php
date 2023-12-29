@@ -17,13 +17,15 @@ class EmployeeEdit extends Component
     use Interactions;
     use AlertTrait;
 
+    public array $roles;
+
     public array $departments;
 
     public array $jobTitles;
 
     public EmployeeForm $form;
 
-    private string $title;
+    public string $title;
 
     public function mount(Employee $employee)
     {
@@ -32,6 +34,7 @@ class EmployeeEdit extends Component
 
         $this->departments = Department::all()->toArray();
         $this->jobTitles = JobTitle::all()->toArray();
+        $this->roles = roleToSelect();
     }
 
     public function save()

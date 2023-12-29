@@ -42,7 +42,7 @@ final class EmployeeTable extends PowerGridComponent
     {
         return Employee::query()
             ->join('users as u', function ($users) {
-                $users->on('employees.id', '=', 'u.id');
+                $users->on('employees.user_id', '=', 'u.id');
             })
             ->select('employees.*', 'u.name as user_name', 'u.email as user_email');
     }

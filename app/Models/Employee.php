@@ -10,6 +10,13 @@ class Employee extends Model
 {
     use SoftDeletes;
 
+    protected $fillable = [
+        'registration',
+        'user_id',
+        'department_id',
+        'job_title_id'
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

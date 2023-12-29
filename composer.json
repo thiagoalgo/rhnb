@@ -19,6 +19,7 @@
         "tallstackui/tallstackui": "^1.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.9",
         "composer/composer": "^2.6",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
@@ -36,7 +37,8 @@
             "Database\\Seeders\\": "database/seeders/"
         },
         "files": [
-            "app/Helpers/StringHelper.php"
+            "app/Helpers/StringHelper.php",
+            "app/Helpers/RoleHelper.php"
         ]
     },
     "autoload-dev": {
