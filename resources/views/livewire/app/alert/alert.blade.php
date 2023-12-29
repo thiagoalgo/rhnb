@@ -1,5 +1,5 @@
 <div>
-    @if (session('info') or session('danger') or session('success') or session('warning') or session('dark'))
+    @if (session('info') || session('danger') || session('success') || session('warning') || session('dark'))
         <div class="flex justify-center gap-4 mb-2">
             <div class="flex w-full max-w-screen-xl flex-col">
                 @if (session('info'))
