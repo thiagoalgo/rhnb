@@ -142,6 +142,7 @@
   ":entity successfully saved.": ":entity salvo(a) com sucesso.",
   ":entity deleted successfully.": ":entity excluído(a) com sucesso.",
   "Do you really want to delete this :entity?": "Deseja realmente excluir este(a) :entity?",
+  "Registers": "Cadastros",
   "Job Title": "Cargo",
   "Job Titles": "Cargos",
   "Department": "Setor",
@@ -152,5 +153,6 @@
   "Role": "Papel",
   "Personal Data": "Dados Pessoais",
   "Access Data": "Dados de Acesso",
+  "Change Password": "Alterar Senha",
   "Send email with the password to employee?": "Enviar e-mail com a senha para o colaborador?"
 }

@@ -44,6 +44,7 @@ class AuthServiceProvider extends ServiceProvider
     private function getGatesAllowed(): array
     {
         return [
+            'manage-profile' => [Role::ADMIN->value, Role::EMPLOYEE],
             'manage-departments' => [Role::ADMIN->value],
             'manage-job-titles' => [Role::ADMIN->value],
             'manage-employees' => [Role::ADMIN->value],

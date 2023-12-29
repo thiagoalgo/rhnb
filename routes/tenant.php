@@ -15,6 +15,7 @@ use App\Livewire\Employee\EmployeeCreate;
 use App\Livewire\Employee\EmployeeEdit;
 use App\Livewire\Employee\Employees;
 use App\Livewire\JobTitle\JobTitleEdit;
+use App\Livewire\Profile\ProfileEdit;
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
@@ -34,6 +35,8 @@ Route::middleware([
 
     Route::middleware(['auth'])->group(function () {
         Route::get('/home', Home::class)->name('home');
+
+        Route::get('/profile', ProfileEdit::class)->name('profile')->middleware('can:manage-profile');
 
         Route::get('/departments', Departments::class)->name('departments')->middleware('can:manage-departments');
         Route::get('/departments/create', DepartmentCreate::class)->name('departments-create')->middleware('can:manage-departments');

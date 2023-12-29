@@ -31,7 +31,7 @@ class Menu extends Component
                 'route' => 'home'
             ],
             [
-                'name' => 'Cadastros',
+                'name' => __('Registers'),
                 'icon' => 'building-office',
                 'abilities' => ['manage-departments', 'manage-job-titles'],
                 'children' => [
