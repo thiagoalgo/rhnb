@@ -4,7 +4,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
             <div class="mb-6">
-                <x-input id="name" wire:model="form.name" label="Nome" />
+                <x-input id="name" wire:model="form.name" label="{{ __('Name') }}" />
             </div>
 
         </div>
