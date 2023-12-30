@@ -15,10 +15,11 @@ class JobTitleCreate extends Component
     use AlertTrait;
     public JobTitleForm $form;
 
-    private string $title;
+    public string $title;
 
-    public function mount(): void {
-        $this->title = __('Job Titles') . ' - '. __('Create');
+    public function mount(): void
+    {
+        $this->title = __('Job Titles') . ' - ' . __('Create');
     }
 
     public function save()

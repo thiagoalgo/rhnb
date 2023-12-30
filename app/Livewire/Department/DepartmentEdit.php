@@ -17,7 +17,7 @@ class DepartmentEdit extends Component
 
     public DepartmentForm $form;
 
-    private string $title;
+    public string $title;
 
     public function mount(Department $department)
     {
