@@ -12,10 +12,20 @@ class TenantsSeeder extends Seeder
      */
     public function run(): void
     {
-        $tenant = Tenant::create(['id' => 'foo']);
-        $tenant->domains()->create(['domain' => 'foo.localhost']);
+        $tenant_ids = [
+            'bar',
+            'foo',
+        ];
 
-        $tenant = Tenant::create(['id' => 'bar']);
-        $tenant->domains()->create(['domain' => 'bar.localhost']);
+        array_map(function ($tenant_id) {
+            $tenant = Tenant::create(['id' => $tenant_id]);
+            $tenant->domains()->create(['domain' => $this->getDomain($tenant)]);
+        }, $tenant_ids);
+    }
+
+    private function getDomain(Tenant $tenant): string
+    {
+        $host = parse_url(env('APP_URL'), PHP_URL_HOST);
+        return $tenant->id . '.' . $host;
     }
 }
