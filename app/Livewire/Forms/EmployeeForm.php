@@ -2,8 +2,10 @@
 
 namespace App\Livewire\Forms;
 
+use App\Mail\EmployeeCreated;
 use App\Models\Employee;
 use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
@@ -66,14 +68,16 @@ class EmployeeForm extends Form
             'password' => bcrypt($this->password),
         ]);
 
-        Employee::query()->create([
+        $employee = Employee::query()->create([
             'registration' => $this->registration,
             'user_id' => $user->id,
             'department_id' => $this->department_id,
             'job_title_id' => $this->job_title_id,
         ]);
 
-        // TODO - Enviar email
+        if ($this->sendEmail) {
+            Mail::to($employee->user->email)->send(new EmployeeCreated($employee, $this->password));
+        }
     }
 
     public function update()
